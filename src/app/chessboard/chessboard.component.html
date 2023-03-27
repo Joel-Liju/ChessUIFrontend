@@ -1,0 +1,8 @@
+<div class="chessboard">
+    <div *ngFor="let chess of chessboard; let i = index"
+    style="background-color: {{chess.color}};"
+    (click) = "movePiece(i);"
+    id="chessbox{{i}}"
+    ><img *ngIf="chess.piece!=''" class="chessbox" src="{{chess.piece}}"/></div>
+    <button (click)="startNewGame()">Start a New Game</button>
+</div>

@@ -1,0 +1,14 @@
+.chessboard{
+    --squareSize : 80px;
+    display: grid;
+    grid-template-columns: repeat(8, var(--squareSize));
+    grid-template-rows: repeat(8, var(--squareSize));
+    margin-left: 30%;
+    margin-top: 10%;
+    text-align: center;
+    
+}
+.chessbox{
+    width: var(--squareSize);
+    height: var(--squareSize);
+}
