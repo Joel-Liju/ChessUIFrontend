@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { ChessboxComponent } from './chessbox/chessbox.component';
 import { ChessboardComponent } from './chessboard/chessboard.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { environment } from 'src/environments/environment.development';
 
-const config: SocketIoConfig = {url: 'http://192.168.0.50:5000',options:{}};
+const config: SocketIoConfig = {url: environment.baseUrl+":5000",options:{}};
 // import { SocketConnectionService } from './services/socket-connection.service';
 
 @NgModule({

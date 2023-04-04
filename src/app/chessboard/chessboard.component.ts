@@ -49,7 +49,7 @@ export class ChessboardComponent implements OnInit{
   readData(data:string):string{
     var temp = data.split(" ")
     var boardStringRep = temp[0].split("/")
-    this.IsWhiteTurn = temp[1]=='w';
+    // this.IsWhiteTurn = temp[1]=='w';
     var board = ""
 
     for(var i = 0; i<8;i++){

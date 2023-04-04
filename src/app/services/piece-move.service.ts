@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable, map} from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +9,13 @@ import { Observable, map} from 'rxjs';
 export class PieceMoveService {
 
   constructor(private http: HttpClient) { }
-  apiUrl = "http://192.168.0.50:5000"
+  apiUrl = environment.baseUrl+":"+environment.portNumber;
   getData(){
-    
+    console.log(this.apiUrl)
     return this.http.get(this.apiUrl)
   }
   async startGame(){
-    // console.log("hi")
-    // const response = await this.http.post(this.apiUrl+"/startGame", "");
+    console.log(this.apiUrl);
     const response = await fetch(this.apiUrl+"/startGame",{
       method: 'POST'
     }).then((response) => response.text()).then((text)=>text);
@@ -23,6 +23,7 @@ export class PieceMoveService {
   }
 
   getTheGame(){
+    console.log(this.apiUrl)
     return this.http.get(this.apiUrl+"/getTheGame");
     // return JSON.stringify(response)
   }
